@@ -53,7 +53,7 @@ export function UploadScreen() {
       <HeartBorder position="top" />
       <div className="upload-center">
         <div className="upload-title">
-          <span className="blink-cursor">▶</span> PIXEL CHAT VIEWER
+          <span className="blink-cursor">▶</span> yapbox
         </div>
         <div className="upload-subtitle">[ LOAD SAVE FILE ]</div>
 
