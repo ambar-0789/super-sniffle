@@ -50,7 +50,7 @@ export function ChatView() {
         <span className="chat-topbar__title">{title.toUpperCase()}</span>
         <div className="chat-topbar__right">
           <button className="px-btn" onClick={() => setView('analytics')}>STATS TYPE SHI</button>
-          <ThemeSwitcher />
+          {/* <ThemeSwitcher /> */}
         </div>
       </div>
 

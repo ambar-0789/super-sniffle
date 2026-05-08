@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import { useStore } from '../../store';
+import type { ParsedConversation } from '../../types';
 import { parseFile } from '../../lib/parser';
 import { PixelWindow } from '../ui/PixelWindow';
 import { HeartBorder } from '../ui/HeartBorder';
@@ -9,6 +10,8 @@ export function UploadScreen() {
   const { loadConversation, setError } = useStore();
   const [loading, setLoading] = useState(false);
   const [drag, setDrag] = useState(false);
+  const [pendingConv, setPendingConv] = useState<ParsedConversation | null>(null);
+  const [pendingFileName, setPendingFileName] = useState('');
 
   const handle = useCallback(async (file: File) => {
     if (!file.name.endsWith('.json')) {
@@ -16,15 +19,18 @@ export function UploadScreen() {
       return;
     }
     setLoading(true);
+    setPendingConv(null);
+    setPendingFileName('');
     try {
       const conv = await parseFile(file);
-      loadConversation(conv);
+      setPendingConv(conv);
+      setPendingFileName(file.name);
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : 'Parse error');
     } finally {
       setLoading(false);
     }
-  }, [loadConversation, setError]);
+  }, [setError]);
 
   const onDrop = useCallback((e: React.DragEvent) => {
     e.preventDefault();
@@ -37,6 +43,10 @@ export function UploadScreen() {
     const file = e.target.files?.[0];
     if (file) handle(file);
   };
+
+  const handleContinue = useCallback(() => {
+    if (pendingConv) loadConversation(pendingConv);
+  }, [loadConversation, pendingConv]);
 
   return (
     <div className="screen upload-screen">
@@ -68,9 +78,22 @@ export function UploadScreen() {
             )}
             <input type="file" accept=".json" onChange={onInput} style={{ display: 'none' }} />
           </label>
-        </PixelWindow>
 
-        <ThemeSwitcher />
+          <div className="upload-panel-footer">
+            <ThemeSwitcher />
+            <div className="upload-status">
+              {pendingConv ? `Ready to continue with ${pendingFileName}` : 'Select a JSON file and choose a theme'}
+            </div>
+            <button
+              className="continue-btn"
+              type="button"
+              disabled={!pendingConv || loading}
+              onClick={handleContinue}
+            >
+              CONTINUE
+            </button>
+          </div>
+        </PixelWindow>
 
         <div className="upload-hint">
           Supports Facebook / Instagram Messenger JSON exports

@@ -33,27 +33,81 @@ export interface ParticipantStats {
   name: string;
   count: number;
   percentage: number;
+  avgMessageLength: number;
+  longestMessage: string;
+  longestMessageLength: number;
+  totalWords: number;
+  totalEmojis: number;
+  topEmojis: [string, number][];
+  totalLinks: number;
+  totalPhotos: number;
+  totalVideos: number;
+  totalGifs: number;
+  mostActiveHour: number;
+  topWords: [string, number][];
   firstMessage: number;
   lastMessage: number;
+  avgResponseTimeMs: number;
+  nightMessages: number;
 }
 
-export interface DailyActivity {
-  date: string;
-  count: number;
+export interface Achievement {
+  id: string;
+  label: string;
+  desc: string;
+  icon: string;
+  winner: string;
 }
 
 export interface AnalyticsData {
   totalMessages: number;
-  participantStats: ParticipantStats[];
-  dailyActivity: DailyActivity[];
-  topHour: number;
+  totalParticipants: number;
+  firstDate: number;
+  lastDate: number;
+  activeDays: number;
   avgPerDay: number;
+  peakDay: string;
+  peakDayCount: number;
+  peakHour: number;
+  peakHourCount: number;
+
+  participantStats: ParticipantStats[];
+
+  dailyActivity: { date: string; count: number }[];
+  hourlyActivity: { hour: number; count: number }[];
+  weeklyHeatmap: { dow: number; hour: number; count: number }[];
+  monthlyActivity: { month: string; count: number }[];
+
+  topWords: [string, number][];
+  topPhrases: [string, number][];
+  avgSentenceLength: number;
+  longestMessage: { sender: string; content: string; length: number };
+
+  rankings: {
+    mostActive: string;
+    biggestSpammer: string;
+    longestTexter: string;
+    mostMediaShared: string;
+    mostLinksShared: string;
+    nightOwl: string;
+    fastestResponder: string;
+  };
+
+  achievements: Achievement[];
+  longestStreak: { days: number; start: string; end: string };
+  longestGap: { days: number; start: string; end: string };
 }
 
 export type ThemeId = 'purple' | 'green' | 'amber' | 'blue' | 'pink';
+export type AnalyticsTab = 'overview' | 'participants' | 'activity' | 'words' | 'badges';
 
 export interface Theme {
   id: ThemeId;
-  name: string;
+  // name: string;
   vars: Record<string, string>;
+  emoji?: string[];
+  heartEmoji?: string;
+  preview?: string;
+  avatar?: string;
+  icon?: string;
 }

@@ -3,27 +3,42 @@ import type { Theme } from '../types';
 export const THEMES: Theme[] = [
   {
     id: 'purple',
-    name: 'MYSTIC',
+    // name: 'MYSTIC',
+    emoji: ['💜', '🌙'],
+    heartEmoji: '💜',
+    preview: '/assets/themes/purple-preview.svg',
+    avatar: '/assets/themes/purple-avatar.svg',
+    icon: '/assets/themes/purple-icon.svg',
     vars: {
-      '--bg': '#7b6b9e',
-      '--bg-dark': '#5a4d7a',
-      '--bg-darker': '#3d3356',
-      '--panel': '#e8d5b7',
-      '--panel-border': '#c4a882',
-      '--accent': '#ff4757',
-      '--accent2': '#2ed573',
-      '--text': '#1a0a2e',
-      '--text-light': '#f0e6ff',
-      '--text-muted': '#9b89b4',
-      '--bubble-self': '#c8b5e8',
-      '--bubble-other': '#f5edd8',
-      '--window-title': '#7fb3d3',
-      '--heart': '#ff4757',
+  '--bg': '#6F5B95',
+  '--bg-dark': '#564476',
+  '--bg-darker': '#342847',
+
+  '--panel': '#EADBBF',
+  '--panel-border': '#C79B6B',
+
+  '--accent': '#FF6B81',
+  '--accent2': '#6BCB77',
+
+  '--text': '#241335',
+  '--text-light': '#F7F0FF',
+  '--text-muted': '#A998C1',
+
+  '--bubble-self': '#CDB8F2',
+  '--bubble-other': '#F7EEDC',
+
+  '--window-title': '#8CC7E8',
+  '--heart': '#FF5C8A',
     },
   },
   {
     id: 'green',
-    name: 'FOREST',
+    // name: 'FOREST',
+    emoji: ['🍃', '🌿'],
+    heartEmoji: '💚',
+    preview: '/assets/themes/green-preview.svg',
+    avatar: '/assets/themes/green-avatar.svg',
+    icon: '/assets/themes/green-icon.svg',
     vars: {
       '--bg': '#4a7c59',
       '--bg-dark': '#2d5a3d',
@@ -43,10 +58,15 @@ export const THEMES: Theme[] = [
   },
   {
     id: 'amber',
-    name: 'DESERT',
+    // name: 'DESERT',
+    emoji: ['🔥', '🌵'],
+    heartEmoji: '🧡',
+    preview: '/assets/themes/amber-preview.svg',
+    avatar: '/assets/themes/amber-avatar.svg',
+    icon: '/assets/themes/amber-icon.svg',
     vars: {
-      '--bg': '#b8824a',
-      '--bg-dark': '#8a5c28',
+      '--bg': '#6f5b95',
+      '--bg-dark': '#564476',
       '--bg-darker': '#5c3810',
       '--panel': '#f5e6c8',
       '--panel-border': '#d4a860',
@@ -63,7 +83,12 @@ export const THEMES: Theme[] = [
   },
   {
     id: 'blue',
-    name: 'OCEAN',
+    // name: 'OCEAN',
+    emoji: ['🌊', '🐚'],
+    heartEmoji: '💙',
+    preview: '/assets/themes/blue-preview.svg',
+    avatar: '/assets/themes/blue-avatar.svg',
+    icon: '/assets/themes/blue-icon.svg',
     vars: {
       '--bg': '#2c4a7c',
       '--bg-dark': '#1a2f5a',
@@ -83,7 +108,12 @@ export const THEMES: Theme[] = [
   },
   {
     id: 'pink',
-    name: 'SAKURA',
+    // name: 'non',
+    emoji: ['🌸', '🍥'],
+    heartEmoji: '💗',
+    preview: '/assets/themes/pink-preview.svg',
+    avatar: '/assets/themes/pink-avatar.svg',
+    icon: '/assets/themes/pink-icon.svg',
     vars: {
       '--bg': '#c97ba8',
       '--bg-dark': '#a05880',
@@ -106,4 +136,8 @@ export const THEMES: Theme[] = [
 export function applyTheme(theme: Theme) {
   const root = document.documentElement;
   Object.entries(theme.vars).forEach(([k, v]) => root.style.setProperty(k, v));
+  if (theme.preview) root.style.setProperty('--theme-preview', `url(${theme.preview})`);
+  if (theme.avatar) root.style.setProperty('--theme-avatar', `url(${theme.avatar})`);
+  if (theme.icon) root.style.setProperty('--theme-icon', `url(${theme.icon})`);
+  if (theme.emoji?.[0]) root.style.setProperty('--theme-emoji', theme.emoji[0]);
 }
