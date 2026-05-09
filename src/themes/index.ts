@@ -1,143 +1,180 @@
+// Suggested border emoji ideas (optional future replacements)
+// Tulip theme  -> 🌷 ✿ ❀
+// Mario theme  -> ⭐ 🍄 🧱
+// Among Us     -> 🚀 👾 🛰
+// Pikachu      -> ⚡ ⭐ 🟡
+// Heart theme  -> ❤️ 💖 ✨
+
 import type { Theme } from '../types';
 
 export const THEMES: Theme[] = [
   {
     id: 'purple',
-    // name: 'MYSTIC',
-    emoji: ['💜', '🌙'],
-    heartEmoji: '💜',
+    heartEmoji: '🌸',
     preview: '/assets/themes/purple-preview.svg',
     avatar: '/assets/themes/purple-avatar.svg',
     icon: '/assets/themes/purple-icon.svg',
     vars: {
-  '--bg': '#6F5B95',
-  '--bg-dark': '#564476',
-  '--bg-darker': '#342847',
+      // Tulip Theme
+      '--bg': '#7D5A8C',
+      '--bg-dark': '#684774',
+      '--bg-darker': '#4D3457',
 
-  '--panel': '#EADBBF',
-  '--panel-border': '#C79B6B',
+      '--panel': '#F6E6D3',
+      '--panel-border': '#E8A87C',
 
-  '--accent': '#FF6B81',
-  '--accent2': '#6BCB77',
+      '--accent': '#FF7A9E',
+      '--accent2': '#9ED9B5',
 
-  '--text': '#241335',
-  '--text-light': '#F7F0FF',
-  '--text-muted': '#A998C1',
+      '--text': '#2F1B3A',
+      '--text-light': '#FFF7FC',
+      '--text-muted': '#B380A3',
 
-  '--bubble-self': '#CDB8F2',
-  '--bubble-other': '#F7EEDC',
+      '--bubble-self': '#FFD1DC',
+      '--bubble-other': '#FFF2E8',
 
-  '--window-title': '#8CC7E8',
-  '--heart': '#FF5C8A',
+      '--window-title': '#8CC7E8',
+      '--heart': '#FF5C8A',
     },
   },
+
   {
     id: 'green',
-    // name: 'FOREST',
-    emoji: ['🍃', '🌿'],
-    heartEmoji: '💚',
+    heartEmoji: ' 🍄 ',
     preview: '/assets/themes/green-preview.svg',
     avatar: '/assets/themes/green-avatar.svg',
     icon: '/assets/themes/green-icon.svg',
     vars: {
-      '--bg': '#4a7c59',
-      '--bg-dark': '#2d5a3d',
-      '--bg-darker': '#1a3d28',
-      '--panel': '#d4e8c2',
-      '--panel-border': '#8ab87a',
-      '--accent': '#ff9f43',
-      '--accent2': '#48dbfb',
-      '--text': '#0a1f0f',
-      '--text-light': '#e8f5e2',
-      '--text-muted': '#7ab88a',
-      '--bubble-self': '#a8d8a8',
-      '--bubble-other': '#f0f7e8',
-      '--window-title': '#6db88a',
-      '--heart': '#ff6b6b',
+      // Mario Theme
+      '--bg': '#5C2C2C',
+      '--bg-dark': '#3E1B1B',
+      '--bg-darker': '#241010',
+
+      '--panel': '#F6E7C1',
+      '--panel-border': '#D89B3C',
+
+      '--accent': '#E63946',
+      '--accent2': '#4CAF50',
+
+      '--text': '#2A120A',
+      '--text-light': '#FFF8EE',
+      '--text-muted': '#B88351',
+
+      '--bubble-self': '#FFCCB3',
+      '--bubble-other': '#FFF3DD',
+
+      '--window-title': '#5DA9E9',
+      '--heart': '#FFCC00',
     },
   },
+
   {
     id: 'amber',
-    // name: 'DESERT',
-    emoji: ['🔥', '🌵'],
-    heartEmoji: '🧡',
+    heartEmoji: '👾',
     preview: '/assets/themes/amber-preview.svg',
     avatar: '/assets/themes/amber-avatar.svg',
     icon: '/assets/themes/amber-icon.svg',
     vars: {
-      '--bg': '#6f5b95',
-      '--bg-dark': '#564476',
-      '--bg-darker': '#5c3810',
-      '--panel': '#f5e6c8',
-      '--panel-border': '#d4a860',
-      '--accent': '#ff6b6b',
-      '--accent2': '#48dbfb',
-      '--text': '#2a1500',
-      '--text-light': '#fff8ee',
-      '--text-muted': '#c8a878',
-      '--bubble-self': '#f5d08a',
-      '--bubble-other': '#fff5e0',
-      '--window-title': '#e8a840',
-      '--heart': '#ff4757',
+      // Among Us Theme
+      '--bg': '#3A0F1A',
+      '--bg-dark': '#260812',
+      '--bg-darker': '#14040A',
+
+      '--panel': '#F1DCC5',
+      '--panel-border': '#B97A56',
+
+      '--accent': '#D7263D',
+      '--accent2': '#5BC0EB',
+
+      '--text': '#240B12',
+      '--text-light': '#FFF5F7',
+      '--text-muted': '#BB7787',
+
+      '--bubble-self': '#FFB3C1',
+      '--bubble-other': '#FFE5E9',
+
+      '--window-title': '#7ED6DF',
+      '--heart': '#FF4757',
     },
   },
+
   {
     id: 'blue',
-    // name: 'OCEAN',
-    emoji: ['🌊', '🐚'],
-    heartEmoji: '💙',
+    heartEmoji: '⭐',
     preview: '/assets/themes/blue-preview.svg',
     avatar: '/assets/themes/blue-avatar.svg',
     icon: '/assets/themes/blue-icon.svg',
     vars: {
-      '--bg': '#2c4a7c',
-      '--bg-dark': '#1a2f5a',
-      '--bg-darker': '#0d1a3a',
-      '--panel': '#c8dff5',
-      '--panel-border': '#7ab0e0',
-      '--accent': '#ffd32a',
-      '--accent2': '#2ed573',
-      '--text': '#0a1530',
-      '--text-light': '#e8f2ff',
-      '--text-muted': '#7a9ac8',
-      '--bubble-self': '#a8c8f0',
-      '--bubble-other': '#e8f4ff',
-      '--window-title': '#5a9fd4',
-      '--heart': '#ff6b9d',
+      // Pikachu Theme
+      '--bg': '#F5D547',
+      '--bg-dark': '#957043',
+      '--bg-darker': '#9E7E10',
+
+      '--panel': '#FFF4C2',
+      '--panel-border': '#E2A93B',
+
+      '--accent': '#FF3B30',
+      '--accent2': '#FFE066',
+
+      '--text': '#3A2500',
+      '--text-light': '#FFFBEF',
+      '--text-muted': '#B88A00',
+
+      '--bubble-self': '#FFE680',
+      '--bubble-other': '#FFF9E0',
+
+      '--window-title': '#FFCB05',
+      '--heart': '#D62828',
     },
   },
+
   {
     id: 'pink',
-    // name: 'non',
-    emoji: ['🌸', '🍥'],
-    heartEmoji: '💗',
+    heartEmoji: '💌',
     preview: '/assets/themes/pink-preview.svg',
     avatar: '/assets/themes/pink-avatar.svg',
     icon: '/assets/themes/pink-icon.svg',
     vars: {
-      '--bg': '#c97ba8',
-      '--bg-dark': '#a05880',
-      '--bg-darker': '#7a3860',
-      '--panel': '#ffe8f5',
-      '--panel-border': '#f0a8d0',
-      '--accent': '#ff4757',
-      '--accent2': '#a8e6cf',
-      '--text': '#3a0a20',
-      '--text-light': '#fff0f8',
-      '--text-muted': '#d098b8',
-      '--bubble-self': '#f8c8e8',
-      '--bubble-other': '#fff5fb',
-      '--window-title': '#f08ab8',
-      '--heart': '#ff4757',
+      // Heart Theme
+      '--bg': '#C65B7C',
+      '--bg-dark': '#A64565',
+      '--bg-darker': '#70263F',
+
+      '--panel': '#FFE6EC',
+      '--panel-border': '#F59CB5',
+
+      '--accent': '#FF3366',
+      '--accent2': '#FFB3C6',
+
+      '--text': '#3A0D1F',
+      '--text-light': '#FFF5F8',
+      '--text-muted': '#CB7C99',
+
+      '--bubble-self': '#FFC2D1',
+      '--bubble-other': '#FFF0F4',
+
+      '--window-title': '#FF7AA2',
+      '--heart': '#FF1744',
     },
   },
 ];
 
 export function applyTheme(theme: Theme) {
   const root = document.documentElement;
-  Object.entries(theme.vars).forEach(([k, v]) => root.style.setProperty(k, v));
-  if (theme.preview) root.style.setProperty('--theme-preview', `url(${theme.preview})`);
-  if (theme.avatar) root.style.setProperty('--theme-avatar', `url(${theme.avatar})`);
-  if (theme.icon) root.style.setProperty('--theme-icon', `url(${theme.icon})`);
-  if (theme.emoji?.[0]) root.style.setProperty('--theme-emoji', theme.emoji[0]);
+
+  Object.entries(theme.vars).forEach(([k, v]) =>
+    root.style.setProperty(k, v)
+  );
+
+  if (theme.preview)
+    root.style.setProperty('--theme-preview', `url(${theme.preview})`);
+
+  if (theme.avatar)
+    root.style.setProperty('--theme-avatar', `url(${theme.avatar})`);
+
+  if (theme.icon)
+    root.style.setProperty('--theme-icon', `url(${theme.icon})`);
+
+  if (theme.emoji?.[0])
+    root.style.setProperty('--theme-emoji', theme.emoji[0]);
 }
